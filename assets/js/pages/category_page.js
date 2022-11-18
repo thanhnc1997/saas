@@ -55,22 +55,59 @@ async function category_page(params = {}) {
 		</div>
 		<div class="filter grid-row four-column-md">
 			<div>
-				<h4>Giá</h4>
-				<button class="btn">Mặc định</button>
-				<button class="btn">Từ thấp đến cao</button>
-				<button class="btn">Từ cao đến thấp</button>
+				<h4 class="mb-15 font-weight-bold">Giá</h4>
+				<label class="label mb-10">
+					<input name="price" type="radio"><span>Mặc định</span>
+				</label>
+				<label class="label mb-10">
+					<input name="price" type="radio"><span>Từ thấp đến cao</span>
+				</label>
+				<label class="label mb-10">
+					<input name="price" type="radio"><span>Từ cao đến thấp</span>
+				</label>
 			</div>
 			<div>
-				<h4>Size</h4>
+				<h4 class="mb-15 font-weight-bold">Size</h4>
+				<label class="label mb-10">
+					<input name="size" type="radio"><span>0</span>
+				</label>
+				<label class="label mb-10">
+					<input name="size" type="radio"><span>1</span>
+				</label>
+				<label class="label mb-10">
+					<input name="size" type="radio"><span>2</span>
+				</label>
+				<label class="label mb-10">
+					<input name="size" type="radio"><span>3</span>
+				</label>
+				<label class="label mb-10">
+					<input name="size" type="radio"><span>4</span>
+				</label>
 			</div>
 			<div>
-				<h4>Mùa sắc</h4>
+				<h4 class="mb-15 font-weight-bold">Màu sắc</h4>
+				<span data-color="Xanh lá" class="color-plate" style="background-color: #2b8c7e"></span>
+				<span data-color="Ghi" class="color-plate" style="background-color: #6a686d"></span>
+				<span data-color="Trắng" class="color-plate" style="background-color: #fff"></span>
+				<span data-color="Hồng đậm" class="color-plate" style="background-color: #d62264"></span>
 			</div>
 			<div>
-				<h4>Danh mục</h4>
+				<h4 class="mb-15 font-weight-bold">Danh mục</h4>
+				<span class="tag">Nữ</span>
+				<span class="tag">Nam</span>
+				<span class="tag">Áo phông</span>
+				<span class="tag">Sơ mi</span>
+				<span class="tag">Váy</span>
+				<span class="tag">Áo khoác</span>
 			</div>
 		</div>
 		`;
+		
+		div.querySelector('.filter-trigger').addEventListener('click', (e) => {
+			e.preventDefault();
+			e.currentTarget.querySelector('svg').classList.toggle('active');
+			div.querySelector('.filter').classList.toggle('show');
+		});
 		
 		return div;
 	}
@@ -99,7 +136,7 @@ async function category_page(params = {}) {
 			item.classList.add('item');
 			item.innerHTML = `
 			${product.sale_price ? `<span class="sale">${sale_percent}%</span>` : ''}
-			<div class="image cursor-pointer" style="background-image: url(${product.image})"></div>
+			<a href="#" class="image" style="background-image: url(${product.image})"></a>
 			<div class="detail">
 				<p class="name">${product.name}</p>
 				<p class="price">${price} VND</p>

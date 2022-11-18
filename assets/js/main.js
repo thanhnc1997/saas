@@ -22,9 +22,15 @@ const render = {
 		let block = await import('./pages/category_page.js');
 		app.appendChild(await block.default());
 		document.querySelector('main').appendChild(app);
+	},
+	async product() {
+		let block = await import('./pages/product_detail_page.js');
+		app.appendChild(await block.default());
+		document.querySelector('main').appendChild(app);
 	}
 }
 
 if (location.pathname == '/') render.home();
 if (location.pathname == '/about') render.about();
 if (location.pathname == '/c') render.category();
+if (location.pathname == '/p') render.category();

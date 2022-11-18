@@ -120,7 +120,7 @@ async function home_page(params = {}) {
 			item.classList.add('item');
 			item.innerHTML = `
 			${product.sale_price ? `<span class="sale">${sale_percent}%</span>` : ''}
-			<div class="image cursor-pointer" style="background-image: url(${product.image})"></div>
+			<a href="#" class="image" style="background-image: url(${product.image})"></a>
 			<div class="detail">
 				<p class="name">${product.name}</p>
 				<p class="price">${price} VND</p>
@@ -184,7 +184,7 @@ async function home_page(params = {}) {
 			item.classList.add('item');
 			item.innerHTML = `
 			${product.sale_price ? `<span class="sale">${sale_percent}%</span>` : ''}
-			<div class="image cursor-pointer" style="background-image: url(${product.image})"></div>
+			<a href="#" class="image" style="background-image: url(${product.image})"></a>
 			<div class="detail">
 				<p class="name">${product.name}</p>
 				<p class="price">${price} VND</p>

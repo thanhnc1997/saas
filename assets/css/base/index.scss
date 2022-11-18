@@ -161,6 +161,13 @@ section {
 .cursor-pointer {
 	cursor: pointer;
 }
+.d-block {
+	display: block;
+}
+.label {
+	display: block;
+	cursor: pointer;
+}
 .title {
 	letter-spacing: 3px;
 	text-transform: uppercase;
@@ -609,6 +616,8 @@ section {
 		.image {
 			background: $grey1 no-repeat center / cover;
 			padding-top: calc(5 / 4 * 100%);
+			display: block;
+			text-decoration: none;
 		}
 		.detail {
 			padding: 14px 6px 11px;
@@ -765,8 +774,8 @@ section {
 .color-plate {
 	display: inline-block;
 	background: $dark;
-	width: 18px;
-	height: 18px;
+	width: 22px;
+	height: 22px;
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
 }
 .section-promotion {
@@ -926,10 +935,42 @@ section {
 		border-right: 3px solid transparent;
 	}
 }
-
+.filter-trigger {
+	svg {
+		transition: .25s ease-in-out;
+		&.active {
+			transform: rotate(45deg);
+		}
+	}
+}
 .filter {
+	display: none;
 	background: $grey2;
 	padding: 15px;
+	input[type=checkbox],
+	input[type=radio] {
+		display: inline-block;
+		margin-right: 8px;
+	}
+	&.show {
+		display: grid;
+	}
+	.color-plate {
+		margin: 0 2px 6px 0;
+		cursor: pointer;
+	}
 }
-
+.tag {
+	display: inline-block;
+	border: 1px solid $dark;
+	color: $dark;
+	margin: 0 2px 6px 0;
+	padding: 8px;
+	cursor: pointer;
+	font-size: 12px;
+	&.active {
+		color: #005CC8;
+		border-color: #005CC8;
+	}
+}
 

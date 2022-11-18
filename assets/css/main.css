@@ -141,6 +141,13 @@ section {
 .cursor-pointer {
   cursor: pointer; }
 
+.d-block {
+  display: block; }
+
+.label {
+  display: block;
+  cursor: pointer; }
+
 .title {
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -494,7 +501,9 @@ section {
         background: #c71010; }
     .grid-row.product-row .image {
       background: #e4e3e5 no-repeat center/cover;
-      padding-top: calc(5 / 4 * 100%); }
+      padding-top: calc(5 / 4 * 100%);
+      display: block;
+      text-decoration: none; }
     .grid-row.product-row .detail {
       padding: 14px 6px 11px;
       opacity: 1;
@@ -621,8 +630,8 @@ section {
 .color-plate {
   display: inline-block;
   background: #484848;
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15); }
 
 .section-promotion {
@@ -765,9 +774,36 @@ section {
     border-left: 3px solid transparent;
     border-right: 3px solid transparent; }
 
+.filter-trigger svg {
+  transition: .25s ease-in-out; }
+  .filter-trigger svg.active {
+    transform: rotate(45deg); }
+
 .filter {
+  display: none;
   background: #f4f4f4;
   padding: 15px; }
+  .filter input[type=checkbox],
+  .filter input[type=radio] {
+    display: inline-block;
+    margin-right: 8px; }
+  .filter.show {
+    display: grid; }
+  .filter .color-plate {
+    margin: 0 2px 6px 0;
+    cursor: pointer; }
+
+.tag {
+  display: inline-block;
+  border: 1px solid #484848;
+  color: #484848;
+  margin: 0 2px 6px 0;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 12px; }
+  .tag.active {
+    color: #005CC8;
+    border-color: #005CC8; }
 
 .product-detail-page .modal-dialog.product-detail-modal {
   top: 0;
