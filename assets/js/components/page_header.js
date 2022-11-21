@@ -3,6 +3,8 @@ import {
 	render_icon
 } from '../helper.js';
 
+import cart from './cart.js';
+
 function page_header() {
 	let div = create_element('header');
 	div.classList.add('header');
@@ -57,8 +59,14 @@ function page_header() {
 		}, 220);
 	}
 
-	div.querySelector('.main-nav button').addEventListener('click', () => {
+	div.querySelector('.main-nav button').addEventListener('click', (e) => {
+		e.preventDefault();
 		hide_mobile_nav();
+	});
+	
+	div.querySelector('.cart').addEventListener('click', (e) => {
+		e.preventDefault();
+		document.body.appendChild(cart());
 	});
 	if (window.innerWidth < 768) {
 		div.querySelectorAll('.main-nav span').forEach(item => {

@@ -3,7 +3,8 @@
   padding: 0;
   line-height: 1.4;
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth; }
 
 html,
 body {
@@ -204,108 +205,6 @@ section {
   margin-bottom: 12px;
   display: block; }
 
-.slideInLeft {
-  animation: slideInLeft .25s; }
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translate(-15%, 0); }
-  to {
-    opacity: 1;
-    transform: translate(0, 0); } }
-@-webkit-keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translate(-15%, 0); }
-  to {
-    opacity: 1;
-    transform: translate(0, 0); } }
-.slideOutLeft {
-  animation: slideOutLeft .25s; }
-
-@keyframes slideOutLeft {
-  from {
-    opacity: 1;
-    transform: translate(0px, 0); }
-  to {
-    opacity: 1;
-    transform: translate(-100%, 0); } }
-@-webkit-keyframes slideOutLeft {
-  from {
-    opacity: 0;
-    transform: translate(0, 0); }
-  to {
-    opacity: 1;
-    transform: translate(-100%, 0); } }
-.slideInRight {
-  animation: slideInRight .25s; }
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translate(15%, 0); }
-  to {
-    opacity: 1;
-    transform: translate(0, 0); } }
-@-webkit-keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translate(15%, 0); }
-  to {
-    opacity: 1;
-    transform: translate(0, 0); } }
-.slideOutRight {
-  animation: slideOutRight .25s; }
-
-@keyframes slideOutRight {
-  from {
-    opacity: 1;
-    transform: translate(0, 0); }
-  to {
-    opacity: 1;
-    transform: translate(100%, 0); } }
-@-webkit-keyframes slideOutRight {
-  from {
-    opacity: 1;
-    transform: translate(0, 0); }
-  to {
-    opacity: 1;
-    transform: translate(100%, 0); } }
-.fadeInUp {
-  animation: fadeInUp .4s; }
-
-@keyframes fadeInUp {
-  from {
-    opacity: 1;
-    margin-top: 5%; }
-  to {
-    opacity: 1;
-    margin-top: 0; } }
-@-webkit-keyframes fadeInUp {
-  from {
-    opacity: 1;
-    margin-top: -10%; }
-  to {
-    opacity: 1;
-    margin-top: 0; } }
-.fadeOutUp {
-  animation: fadeOutUp .4s; }
-
-@keyframes fadeOutUp {
-  from {
-    opacity: 1;
-    margin-top: 0; }
-  to {
-    opacity: 0;
-    margin-top: -5%; } }
-@-webkit-keyframes fadeOutUp {
-  from {
-    opacity: 1;
-    margin-top: 0; }
-  to {
-    opacity: 0;
-    margin-top: -5%; } }
 .toast {
   position: fixed;
   z-index: 11111;
@@ -654,9 +553,6 @@ section {
   background: rgba(0, 0, 0, 0.45);
   z-index: 1111; }
 
-.modal-wrapper {
-  display: none; }
-
 .modal-dialog {
   z-index: 1111;
   position: fixed;
@@ -711,7 +607,7 @@ section {
 
 .size-table {
   letter-spacing: 2px;
-  font-size: 11px;
+  font-size: 12px;
   overflow: hidden; }
   .size-table th,
   .size-table td {
@@ -791,7 +687,9 @@ section {
     display: grid; }
   .filter .color-plate {
     margin: 0 2px 6px 0;
-    cursor: pointer; }
+    cursor: pointer;
+    width: 40px;
+    height: 40px; }
 
 .tag {
   display: inline-block;
@@ -889,11 +787,12 @@ section {
           .product-detail-page .product-detail .detail > div.text-right .close span {
             display: inline-block; } }
   .product-detail-page .product-detail .detail p {
-    font-size: 11px;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px; }
     .product-detail-page .product-detail .detail p.name {
-      margin-bottom: 12px; }
+      margin-bottom: 12px;
+      font-weight: 600; }
     .product-detail-page .product-detail .detail p.price {
       margin-bottom: 28px; }
   .product-detail-page .product-detail .detail .variation-list span {
@@ -944,12 +843,15 @@ section {
 .cart-modal-wrapper .cart-modal {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -100%;
   bottom: 0;
   background: #fff;
   box-shadow: -2px 0 9px 1px rgba(21, 23, 24, 0.1);
   z-index: 1111;
-  width: 100%; }
+  width: 100%;
+  transition: .4s ease-in-out; }
+  .cart-modal-wrapper .cart-modal.in {
+    right: 0; }
   @media (min-width: 1024px) {
     .cart-modal-wrapper .cart-modal {
       width: 80%; } }

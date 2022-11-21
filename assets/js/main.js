@@ -33,4 +33,4 @@ const render = {
 if (location.pathname == '/') render.home();
 if (location.pathname == '/about') render.about();
 if (location.pathname == '/c') render.category();
-if (location.pathname == '/p') render.category();
+if (location.pathname == '/p') render.product();

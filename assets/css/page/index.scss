@@ -96,11 +96,12 @@
 				}
 			}
 			p {
-				font-size: 11px;
+				font-size: 14px;
 				text-transform: uppercase;
 				letter-spacing: 2px;
 				&.name {
 					margin-bottom: 12px;
+					font-weight: 600;
 				}
 				&.price {
 					margin-bottom: 28px;
@@ -175,12 +176,16 @@
 	.cart-modal {
 		position: fixed;
 		top: 0;
-		right: 0;
+		right: -100%;
 		bottom: 0;
 		background: $light;
 		box-shadow: -2px 0 9px 1px rgba(21, 23, 24, .1);
 		z-index: 1111;
 		width: 100%;
+		transition: .4s ease-in-out;
+		&.in {
+			right: 0;
+		}
 		@media (min-width: 1024px) {
 			width: 80%;
 		}

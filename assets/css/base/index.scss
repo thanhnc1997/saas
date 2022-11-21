@@ -18,6 +18,7 @@ $warning: #f7af2c;
 	line-height: 1.4;
 	box-sizing: border-box;
 	-webkit-tap-highlight-color: transparent;
+	scroll-behavior: smooth;
 }
 html,
 body {
@@ -227,164 +228,6 @@ section {
 .form-group {
 	margin-bottom: 12px;
 	display: block;
-}
-//
-// animations
-//
-// slide in left
-//
-.slideInLeft {
-	animation: slideInLeft .25s;
-}
-@keyframes slideInLeft {
-	from {
-		opacity: 0;
-		transform: translate(-15%, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
-}
-@-webkit-keyframes slideInLeft {
-	from {
-		opacity: 0;
-		transform: translate(-15%, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
-}
-//
-// slide out left
-//
-.slideOutLeft {
-	animation: slideOutLeft .25s;
-}
-@keyframes slideOutLeft {
-	from {
-		opacity: 1;
-		transform: translate(0px, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate(-100%, 0);
-	}
-}
-@-webkit-keyframes slideOutLeft {
-	from {
-		opacity: 0;
-		transform: translate(0, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate(-100%, 0);
-	}
-}
-//
-// slide in right
-//
-.slideInRight {
-	animation: slideInRight .25s;
-}
-@keyframes slideInRight {
-	from {
-		opacity: 0;
-		transform: translate(15%, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
-}
-@-webkit-keyframes slideInRight {
-	from {
-		opacity: 0;
-		transform: translate(15%, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
-}
-//
-// slide out right
-//
-.slideOutRight {
-	animation: slideOutRight .25s;
-}
-@keyframes slideOutRight {
-	from {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate(100%, 0);
-	}
-}
-@-webkit-keyframes slideOutRight {
-	from {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate(100%, 0);
-	}
-}
-//
-// fadeInUp
-//
-.fadeInUp {
-	animation: fadeInUp .4s;
-}
-@keyframes fadeInUp {
-	from {
-		opacity: 1;
-		margin-top: 5%;
-	}
-	to {
-		opacity: 1;
-		margin-top: 0;
-	}
-}
-@-webkit-keyframes fadeInUp {
-	from {
-		opacity: 1;
-		margin-top: -10%;
-	}
-	to {
-		opacity: 1;
-		margin-top: 0;
-	}
-}
-//
-// fadeOtnUp
-//
-.fadeOutUp {
-	animation: fadeOutUp .4s;
-}
-@keyframes fadeOutUp {
-	from {
-		opacity: 1;
-		margin-top: 0;
-	}
-	to {
-		opacity: 0;
-		margin-top: -5%;
-	}
-}
-@-webkit-keyframes fadeOutUp {
-	from {
-		opacity: 1;
-		margin-top: 0;
-	}
-	to {
-		opacity: 0;
-		margin-top: -5%;
-	}
 }
 
 .toast {
@@ -799,9 +642,6 @@ section {
 	background: rgba(0, 0, 0, .45);
 	z-index: 1111;
 }
-.modal-wrapper {
-	display: none;
-}
 .modal-dialog {
 	z-index: 1111;
 	position: fixed;
@@ -867,7 +707,7 @@ section {
 }
 .size-table {
 	letter-spacing: 2px;
-	font-size: 11px;
+	font-size: 12px;
 	overflow: hidden;
 	th,
 	td {
@@ -958,6 +798,8 @@ section {
 	.color-plate {
 		margin: 0 2px 6px 0;
 		cursor: pointer;
+		width: 40px;
+		height: 40px;
 	}
 }
 .tag {
